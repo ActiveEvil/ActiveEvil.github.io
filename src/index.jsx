@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import Frame from './components/Frame';
+import Frame from './containers/Frame';
 import Search from './components/Search';
 import { fetchCharacterData } from './actions/Swapi';
 

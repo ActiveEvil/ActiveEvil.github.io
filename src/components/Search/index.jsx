@@ -10,7 +10,7 @@ class Search extends React.Component {
         id={'search'}
         name={'search'}
         type={'search'}
-        placeholder={'Search for Star Wars Characters'}
+        placeholder={'Search for Star Wars Characters...'}
         aria-label={'Search for Star Wars Characters'}
       />
     );

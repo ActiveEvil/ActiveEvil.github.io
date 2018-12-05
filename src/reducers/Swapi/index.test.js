@@ -8,6 +8,7 @@ describe('Swapi reducer', () => {
     const reducer = Reducer(undefined, {});
 
     expect(reducer).toEqual({
+      isFetching: true,
       characters: [],
     });
   });
@@ -19,6 +20,7 @@ describe('Swapi reducer', () => {
       name: 'R2-D2',
     }];
     const reducer = Reducer({
+      isFetching: true,
       characters: [],
     }, {
       type: RECEIVE_CHARACTER_DATA,
@@ -26,6 +28,7 @@ describe('Swapi reducer', () => {
     });
 
     expect(reducer).toEqual({
+      isFetching: false,
       characters,
     });
   });
