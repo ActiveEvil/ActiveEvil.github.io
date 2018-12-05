@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Search from '../../containers/Search';
+import Results from '../../containers/Results';
 import style from './style.css';
 
 class Frame extends React.Component {
@@ -24,7 +26,8 @@ class Frame extends React.Component {
 
     return (
       <section className={style.frame}>
-        {children}
+        <Search/>
+        <Results/>
       </section>
     );
   }
@@ -32,7 +35,6 @@ class Frame extends React.Component {
 
 Frame.propTypes = {
   isLoading: PropTypes.bool,
-  children: PropTypes.element.isRequired,
 };
 
 export default Frame;

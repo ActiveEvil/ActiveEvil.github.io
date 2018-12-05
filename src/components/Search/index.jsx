@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import style from './style.css';
 
 class Search extends React.Component {
@@ -23,8 +23,8 @@ class Search extends React.Component {
   }
 }
 
-// Header.propTypes = {
-//   children: PropTypes.element.isRequired,
-// };
+Search.propTypes = {
+  uiEventHandlers: PropTypes.objectOf(PropTypes.func),
+};
 
 export default Search;

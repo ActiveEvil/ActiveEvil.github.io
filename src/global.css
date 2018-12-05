@@ -1,0 +1,11 @@
+:global(body)
+{
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 15px;
+
+    margin: 0;
+    padding: 2%;
+
+    color: #fff;
+    background-color: #000;
+}

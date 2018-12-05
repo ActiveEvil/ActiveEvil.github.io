@@ -1,0 +1,46 @@
+.container
+{
+    display: flex;
+    flex: 1;
+
+    width: 100%;
+    margin-top: 8px;
+}
+
+.list
+{
+    overflow: auto;
+
+    width: 30%;
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    animation: FadeIn .7s ease-in-out forwards;
+
+    border-right: 3px #a6ceef inset;
+}
+
+.item
+{
+    padding: 8px 16px;
+}
+
+.link
+{
+    text-decoration: none;
+}
+
+@keyframes FadeIn
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    100%
+    {
+        opacity: 1;
+    }
+}
