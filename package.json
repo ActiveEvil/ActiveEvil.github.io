@@ -1,0 +1,37 @@
+{
+  "name": "sw-character-search",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/ActiveEvil/ActiveEvil.github.io",
+  "author": "ActiveEvil <active_evil@protonmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack --watch --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --hot --inline"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.3.1",
+    "babel-polyfill": "^6.26.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-lazy-load": "^3.0.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^0.23.1",
+    "svg-inline-loader": "^0.8.0",
+    "svg-inline-react": "^3.1.0",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10",
+    "webpack-merge": "^4.1.4"
+  }
+}
