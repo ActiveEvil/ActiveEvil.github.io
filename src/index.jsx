@@ -6,7 +6,7 @@ import Frame from './containers/Frame';
 import Search from './containers/Search';
 import { fetchCharacterData } from './actions/Swapi';
 
-store.dispatch(fetchCharacterData('https://swapi.co/api/people/?search=r'));
+store.dispatch(fetchCharacterData('https://swapi.co/api/people/'));
 
 ReactDOM.render(
   <Provider store={store}>
