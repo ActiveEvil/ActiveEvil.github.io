@@ -17,10 +17,14 @@ const Swapi = (state = {
       });
     }
     case SEARCH_CHARACTER_DATA: {
-      console.log(action);
-      const characterMatches = state.characters.filter(character => character.name.toLowerCase().includes(action.search.toLowerCase()));
+      let characterMatches = [];
+
+      if (action.search.length) {
+        characterMatches = state.characters.filter(character => character.name.toLowerCase().includes(action.search.toLowerCase()));
+      }
 
       return Object.assign({}, state, {
+        search: action.search,
         characterMatches,
       });
     }
