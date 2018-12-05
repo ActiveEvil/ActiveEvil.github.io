@@ -86,7 +86,7 @@
 {
     overflow: auto;
 
-    width: 30%;
+    width: 31%;
     margin: 0;
     padding: 0;
 
@@ -196,7 +196,7 @@
     border: 3px double #1b39e9;
     border-radius: 5px;
     background-image: linear-gradient(90deg, rgba(43, 98, 200, .3) 2px, transparent 2px), linear-gradient(90deg, rgba(43, 98, 200, .5) 4px, transparent 4px);
-    background-size: 10%, 30%;
+    background-size: 11%, 44%;
 }
 
 @-webkit-keyframes style_FadeIn_1V5qTSM24xn9Ff2lb7GkgY

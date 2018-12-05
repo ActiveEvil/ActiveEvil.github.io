@@ -2,12 +2,29 @@ import React from 'react';
 import Enzyme, {shallow} from 'enzyme';
 import Component from './';
 
-describe('Search component', () => {
-  test('renders a search input', () => {
+describe('Results component', () => {
+  test('does not render when there are character matches', () => {
     const wrapper = shallow(
-      <Component />
+      <Component
+        characters={[]}
+      />
     );
 
-    expect(wrapper.find(`.search`).exists()).toBe(true);
+    expect(wrapper.find(`.container`).exists()).toBe(false);
+  });
+
+  test('renders a results list when there are character matches', () => {
+    const wrapper = shallow(
+      <Component
+        characters={[{
+          name: 'IG-88',
+        }, {
+          name: 'R2-D2',
+        }]}
+      />
+    );
+
+    expect(wrapper.find(`.container`).exists()).toBe(true);
+    expect(wrapper.find(`li`).length).toEqual(2);
   });
 });

@@ -8,7 +8,7 @@ class Results extends React.Component {
   }
 
   render() {
-    const { characters } = this.props;
+    const { characters = [] } = this.props;
 
     if (characters.length) {
       return (
