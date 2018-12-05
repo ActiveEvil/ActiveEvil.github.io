@@ -1,0 +1,11 @@
+.search
+{
+  width: 80%;
+  outline: 0;
+  border: 1px solid #2d2d2d;
+  margin: 0 auto;
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.8em;
+  padding: 8px 16px;
+}
