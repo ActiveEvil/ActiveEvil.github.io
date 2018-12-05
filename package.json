@@ -13,16 +13,22 @@
   },
   "dependencies": {
     "autoprefixer": "^9.3.1",
+    "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-lazy-load": "^3.0.13"
+    "react-lazy-load": "^3.0.13",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "axios-mock-adapter": "^1.15.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
@@ -35,6 +41,7 @@
     "postcss-loader": "^3.0.0",
     "prop-types": "^15.6.2",
     "react-test-renderer": "^16.6.3",
+    "redux-mock-store": "^1.5.3",
     "regenerator-runtime": "^0.13.1",
     "style-loader": "^0.23.1",
     "svg-inline-loader": "^0.8.0",
@@ -45,6 +52,15 @@
     "webpack-merge": "^4.1.4"
   },
   "jest": {
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/test/setup/"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/public/",
+      "<rootDir>/node_modules/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/test/setup/",
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
     }
