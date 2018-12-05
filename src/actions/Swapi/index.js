@@ -21,6 +21,12 @@ export function partialMatchCharacters(search) {
 
 
 async function loadCharacterData(url) {
+  const cache = sessionStorage.getItem('characters');
+
+  if (cache) {
+    return JSON.parse(cache);
+  }
+
   const characters = [];
   const response = await axios.get(url);
   const { next, results } = response.data;
@@ -32,6 +38,8 @@ async function loadCharacterData(url) {
 
     characters.push(...moreCharacters);
   }
+
+  sessionStorage.setItem('characters', JSON.stringify(characters));
 
   return characters;
 }
