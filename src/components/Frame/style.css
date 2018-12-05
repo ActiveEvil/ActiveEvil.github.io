@@ -4,6 +4,7 @@
     font-size: 15px;
 
     margin: 0;
+    padding: 2%;
 
     color: #fff;
     background: #000;
@@ -46,8 +47,9 @@
 .frame
 {
     box-sizing: border-box;
-    height: 96%;
-    margin: 2%;
+    max-width: 1000px;
+    height: 100%;
+    margin: auto;
     padding: 2%;
 
     animation: FadeIn .7s ease-in-out forwards;

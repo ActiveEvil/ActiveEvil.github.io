@@ -4,6 +4,7 @@ body
     font-size: 15px;
 
     margin: 0;
+    padding: 2%;
 
     color: #fff;
     background: #000;
@@ -55,8 +56,9 @@ body
 .style_frame_3K7UNzfPb3XH1kpyQCr_lg
 {
     box-sizing: border-box;
-    height: 96%;
-    margin: 2%;
+    max-width: 1000px;
+    height: 100%;
+    margin: auto;
     padding: 2%;
 
     -webkit-animation: style_FadeIn_1V5qTSM24xn9Ff2lb7GkgY .7s ease-in-out forwards;
@@ -200,18 +202,31 @@ body
 .style_search_2WJK_XzAKEvkuccfdLxJP
 {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1.8em;
+    font-size: 1.4em;
 
     display: block;
 
-    width: 80%;
+    box-sizing: border-box;
+    width: 100%;
     margin: 0 auto;
     padding: 8px 16px;
+
+    -webkit-animation: style_FadeIn_3tKrbblHc5U5p_cih68xRC .7s ease-in-out forwards;
+
+            animation: style_FadeIn_3tKrbblHc5U5p_cih68xRC .7s ease-in-out forwards;
 
     color: #a6ceef;
     border: none;
     outline: 0;
     background: transparent;
+}
+
+@media (max-width: 600px)
+{
+    .style_search_2WJK_XzAKEvkuccfdLxJP
+    {
+        font-size: 1em;
+    }
 }
 
 ::-webkit-input-placeholder
@@ -232,4 +247,30 @@ body
 :-moz-placeholder
 {
     color: #a6ceef;
+}
+
+@-webkit-keyframes style_FadeIn_3tKrbblHc5U5p_cih68xRC
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes style_FadeIn_3tKrbblHc5U5p_cih68xRC
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    100%
+    {
+        opacity: 1;
+    }
 }

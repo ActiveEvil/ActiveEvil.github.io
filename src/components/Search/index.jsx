@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 import style from './style.css';
 
 class Search extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    const { uiEventHandlers } = this.props;
     return (
       <input
         className={style.search}
@@ -11,7 +16,8 @@ class Search extends React.Component {
         name={'search'}
         type={'search'}
         placeholder={'Search for Star Wars Characters...'}
-        aria-label={'Search for Star Wars Characters'}
+        aria-label={'Search for Star Wars Characters...'}
+        onChange={e => uiEventHandlers.handleSearchInput(e.target.value)}
       />
     );
   }

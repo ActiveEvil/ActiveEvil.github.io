@@ -1,18 +1,29 @@
 .search
 {
     font-family: 'Share Tech Mono', monospace;
-    font-size: 1.8em;
+    font-size: 1.4em;
 
     display: block;
 
-    width: 80%;
+    box-sizing: border-box;
+    width: 100%;
     margin: 0 auto;
     padding: 8px 16px;
+
+    animation: FadeIn .7s ease-in-out forwards;
 
     color: #a6ceef;
     border: none;
     outline: 0;
     background: transparent;
+}
+
+@media (max-width: 600px)
+{
+    .search
+    {
+        font-size: 1em;
+    }
 }
 
 :global(::-webkit-input-placeholder)
@@ -33,4 +44,17 @@
 :global(:-moz-placeholder)
 {
     color: #a6ceef;
+}
+
+@keyframes FadeIn
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    100%
+    {
+        opacity: 1;
+    }
 }

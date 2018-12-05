@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import style from './style.css';
 
 class Frame extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const { isLoading, children } = this.props;
 

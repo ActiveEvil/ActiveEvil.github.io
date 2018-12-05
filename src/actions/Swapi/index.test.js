@@ -1,11 +1,12 @@
-import 'babel-polyfill';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import {
   RECEIVE_CHARACTER_DATA,
+  SEARCH_CHARACTER_DATA,
   fetchCharacterData,
+  partialMatchCharacters,
 } from './';
 
 const mockAxios = new MockAdapter(axios);
@@ -24,6 +25,16 @@ describe('Swapi', () => {
 
   beforeEach(() => {
     store = mockStore({});
+  });
+
+  describe('partialMatchCharacters action', () => {
+    const search = 'Droopy McCool';
+    const action = partialMatchCharacters(search);
+
+    test('sets a search term to perform a partial match against', () => {
+      expect(action.type).toEqual(SEARCH_CHARACTER_DATA);
+      expect(action.search).toEqual(search);
+    });
   });
 
   describe('fetchCharacterData action', () => {

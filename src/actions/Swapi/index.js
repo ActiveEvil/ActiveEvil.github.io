@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 export const RECEIVE_CHARACTER_DATA = 'RECEIVE_CHARACTER_DATA';
+export const SEARCH_CHARACTER_DATA = 'SEARCH_CHARACTER_DATA';
 
 function receiveCharacterData(characters) {
   return {
@@ -9,6 +10,15 @@ function receiveCharacterData(characters) {
     receivedAt: Date.now(),
   };
 }
+
+export function partialMatchCharacters(search) {
+  return {
+    type: SEARCH_CHARACTER_DATA,
+    search,
+    receivedAt: Date.now(),
+  };
+}
+
 
 async function loadCharacterData(url) {
   const characters = [];
