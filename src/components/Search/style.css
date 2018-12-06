@@ -26,26 +26,6 @@
     }
 }
 
-:global(::-webkit-input-placeholder)
-{
-    color: #a6ceef;
-}
-
-:global(::-moz-placeholder)
-{
-    color: #a6ceef;
-}
-
-:global(:-ms-input-placeholder)
-{
-    color: #a6ceef;
-}
-
-:global(:-moz-placeholder)
-{
-    color: #a6ceef;
-}
-
 @keyframes FadeIn
 {
     0%

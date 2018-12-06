@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Search from '../../containers/Search';
 import Results from '../../containers/Results';
+import Profile from '../../containers/Profile';
 import style from './style.css';
 
 class Frame extends React.Component {
@@ -27,7 +28,10 @@ class Frame extends React.Component {
     return (
       <section className={style.frame}>
         <Search/>
-        <Results/>
+        <section className={style.container}>
+          <Results/>
+          <Profile/>
+        </section>
       </section>
     );
   }

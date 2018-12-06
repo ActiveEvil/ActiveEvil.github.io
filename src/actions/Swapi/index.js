@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const RECEIVE_CHARACTER_DATA = 'RECEIVE_CHARACTER_DATA';
 export const SEARCH_CHARACTER_DATA = 'SEARCH_CHARACTER_DATA';
+export const SET_PROFILE_DATA = 'SET_PROFILE_DATA';
 
 function receiveCharacterData(characters) {
   return {
@@ -15,6 +16,14 @@ export function partialMatchCharacters(search) {
   return {
     type: SEARCH_CHARACTER_DATA,
     search,
+    receivedAt: Date.now(),
+  };
+}
+
+export function characterSelection(profile) {
+  return {
+    type: SET_PROFILE_DATA,
+    profile,
     receivedAt: Date.now(),
   };
 }

@@ -36,6 +36,5 @@ describe('Results container', () => {
     const props = wrapper.find(Component).props();
 
     expect(props.characters).toEqual(expect.arrayContaining([]));
-    expect(props.uiEventHandlers.handleCharacterSelection).toBe.function;
   });
 });

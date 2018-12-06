@@ -1,0 +1,53 @@
+.container
+{
+    box-sizing: border-box;
+    width: 69%;
+    margin: 0 0 0 auto;
+    padding: 32px;
+
+    animation: FadeIn .7s ease-in-out;
+
+    background-color: rgba(43, 98, 200, .3);
+}
+
+.title
+{
+    font-size: 1.8em;
+    font-weight: 400;
+
+    margin: 0 auto;
+}
+
+.container table
+{
+    margin-top: 16px;
+}
+
+.container td
+{
+    padding: 4px;
+}
+
+
+@media (max-width: 600px)
+{
+    .container
+    {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+
+@keyframes FadeIn
+{
+    0%
+    {
+        opacity: 0;
+    }
+
+    100%
+    {
+        opacity: 1;
+    }
+}

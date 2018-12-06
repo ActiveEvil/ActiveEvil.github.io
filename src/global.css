@@ -9,3 +9,23 @@
     color: #fff;
     background-color: #000;
 }
+
+:global(::-webkit-input-placeholder)
+{
+    color: #a6ceef;
+}
+
+:global(::-moz-placeholder)
+{
+    color: #a6ceef;
+}
+
+:global(:-ms-input-placeholder)
+{
+    color: #a6ceef;
+}
+
+:global(:-moz-placeholder)
+{
+    color: #a6ceef;
+}

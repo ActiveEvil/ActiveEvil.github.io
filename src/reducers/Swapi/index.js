@@ -1,6 +1,7 @@
 import {
   RECEIVE_CHARACTER_DATA,
   SEARCH_CHARACTER_DATA,
+  SET_PROFILE_DATA,
 } from '../../actions/Swapi';
 
 const Swapi = (state = {
@@ -8,6 +9,7 @@ const Swapi = (state = {
   characters: [],
   search: '',
   characterMatches: [],
+  profile: null,
 }, action) => {
   switch (action.type) {
     case RECEIVE_CHARACTER_DATA: {
@@ -26,6 +28,11 @@ const Swapi = (state = {
       return Object.assign({}, state, {
         search: action.search,
         characterMatches,
+      });
+    }
+    case SET_PROFILE_DATA: {
+      return Object.assign({}, state, {
+        profile: action.profile,
       });
     }
     default:

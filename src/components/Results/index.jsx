@@ -8,22 +8,25 @@ class Results extends React.Component {
   }
 
   render() {
-    const { characters = [] } = this.props;
+    const { characters = [], uiEventHandlers} = this.props;
 
     if (characters.length) {
       return (
-        <section className={style.container}>
-          <ul className={style.list}>
-            {characters.map((character, index) => (
-              <li
-                className={style.item}
-                key={index}
+        <ul className={style.list}>
+          {characters.map((character, index) => (
+            <li
+              className={style.item}
+              key={index}
+            >
+              <a
+                className={style.link}
+                onClick={() => uiEventHandlers.handleCharacterSelection(character)}
               >
-                <a className={style.link}>{character.name}</a>
-              </li>
-            ))}
-          </ul>
-        </section>
+                {character.name}
+              </a>
+            </li>
+          ))}
+        </ul>
       );
     }
 
@@ -33,6 +36,7 @@ class Results extends React.Component {
 
 Results.propTypes = {
   characters: PropTypes.array,
+  uiEventHandlers: PropTypes.objectOf(PropTypes.func),
 };
 
 export default Results;
