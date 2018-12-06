@@ -14,7 +14,7 @@ describe('Frame component', () => {
       </Component>
     );
 
-    expect(wrapper.find(`.loader`).exists()).toBe(true);
+    expect(wrapper.find('.loader').exists()).toBe(true);
   });
 
   test('renders an application frame', () => {
@@ -22,7 +22,7 @@ describe('Frame component', () => {
       <Component />
     );
 
-    expect(wrapper.find(`.frame`).exists()).toBe(true);
+    expect(wrapper.find('.frame').exists()).toBe(true);
   });
 
   test('renders child elements', () => {

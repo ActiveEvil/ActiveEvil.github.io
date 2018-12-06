@@ -5,8 +5,10 @@ import thunk from 'redux-thunk';
 import {
   RECEIVE_CHARACTER_DATA,
   SEARCH_CHARACTER_DATA,
+  SET_PROFILE_DATA,
   fetchCharacterData,
   partialMatchCharacters,
+  characterSelection,
 } from './';
 
 const mockAxios = new MockAdapter(axios);
@@ -34,6 +36,18 @@ describe('Swapi', () => {
     test('sets a search term to perform a partial match against', () => {
       expect(action.type).toEqual(SEARCH_CHARACTER_DATA);
       expect(action.search).toEqual(search);
+    });
+  });
+
+  describe('characterSelection action', () => {
+    const profile = {
+      name: 'Droopy McCool'
+    };
+    const action = characterSelection(profile);
+
+    test('sets an active character profile', () => {
+      expect(action.type).toEqual(SET_PROFILE_DATA);
+      expect(action.profile).toEqual(profile);
     });
   });
 

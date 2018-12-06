@@ -10,7 +10,7 @@ describe('Results component', () => {
       />
     );
 
-    expect(wrapper.find(`.container`).exists()).toBe(false);
+    expect(wrapper.find('.container').exists()).toBe(false);
   });
 
   test('renders a results list when there are character matches', () => {
@@ -24,7 +24,7 @@ describe('Results component', () => {
       />
     );
 
-    expect(wrapper.find(`.container`).exists()).toBe(true);
-    expect(wrapper.find(`li`).length).toEqual(2);
+    expect(wrapper.find('.list').exists()).toBe(true);
+    expect(wrapper.find('li').length).toEqual(2);
   });
 });

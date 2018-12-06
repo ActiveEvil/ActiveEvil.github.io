@@ -4,14 +4,14 @@ import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
 import { mount } from 'enzyme';
 import Container from './';
-import Component from '../../components/Results';
+import Component from '../../components/Profile';
 
 const mockStore = configureMockStore([thunk]);
 
-describe('Results container', () => {
+describe('Profile container', () => {
   const store = mockStore({
     Swapi: {
-      characters: [],
+      character: {},
     },
   });
 
@@ -35,6 +35,6 @@ describe('Results container', () => {
 
     const props = wrapper.find(Component).props();
 
-    expect(props.characters).toEqual(expect.arrayContaining([]));
+    expect(props.character).toEqual(expect.objectContaining({}));
   });
 });

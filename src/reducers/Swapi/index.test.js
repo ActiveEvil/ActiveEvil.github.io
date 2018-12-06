@@ -2,6 +2,7 @@ import Reducer from './';
 import {
   RECEIVE_CHARACTER_DATA,
   SEARCH_CHARACTER_DATA,
+  SET_PROFILE_DATA,
 } from '../../actions/Swapi';
 
 describe('Swapi reducer', () => {
@@ -13,6 +14,7 @@ describe('Swapi reducer', () => {
       characters: [],
       search: '',
       characterMatches: [],
+      profile: null,
     });
   });
 
@@ -22,6 +24,7 @@ describe('Swapi reducer', () => {
       characters: [],
       search: '',
       characterMatches: [],
+      profile: null,
     }, {
       type: RECEIVE_CHARACTER_DATA,
       characters: [{
@@ -40,6 +43,7 @@ describe('Swapi reducer', () => {
       }],
       search: '',
       characterMatches: [],
+      profile: null,
     });
   });
 
@@ -53,6 +57,7 @@ describe('Swapi reducer', () => {
       }],
       search: '',
       characterMatches: [],
+      profile: null,
     }, {
       type: SEARCH_CHARACTER_DATA,
       search: 'r',
@@ -69,6 +74,7 @@ describe('Swapi reducer', () => {
       characterMatches: [{
         name: 'R2-D2',
       }],
+      profile: null,
     });
   });
 
@@ -84,6 +90,7 @@ describe('Swapi reducer', () => {
       characterMatches: [{
         name: 'R2-D2',
       }],
+      profile: null,
     }, {
       type: SEARCH_CHARACTER_DATA,
       search: '',
@@ -98,6 +105,32 @@ describe('Swapi reducer', () => {
       }],
       search: '',
       characterMatches: [],
+      profile: null,
+    });
+  });
+
+  test('handles SET_PROFILE_DATA action', () => {
+    const reducer = Reducer({
+      isFetching: false,
+      characters: [],
+      search: '',
+      characterMatches: [],
+      profile: null,
+    }, {
+      type: SET_PROFILE_DATA,
+      profile: {
+        name: 'IG-88',
+      },
+    });
+
+    expect(reducer).toEqual({
+      isFetching: false,
+      characters: [],
+      search: '',
+      characterMatches: [],
+      profile: {
+        name: 'IG-88',
+      },
     });
   });
 });

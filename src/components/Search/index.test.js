@@ -8,6 +8,8 @@ describe('Search component', () => {
       <Component />
     );
 
-    expect(wrapper.find(`.search`).exists()).toBe(true);
+    console.log(wrapper);
+
+    expect(wrapper.find('.search').exists()).toBe(true);
   });
 });

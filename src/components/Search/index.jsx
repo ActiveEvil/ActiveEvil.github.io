@@ -9,6 +9,7 @@ class Search extends React.Component {
 
   render() {
     const { uiEventHandlers } = this.props;
+    
     return (
       <input
         className={style.search}
