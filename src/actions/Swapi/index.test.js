@@ -39,18 +39,6 @@ describe('Swapi', () => {
     });
   });
 
-  describe('characterSelection action', () => {
-    const profile = {
-      name: 'Droopy McCool'
-    };
-    const action = characterSelection(profile);
-
-    test('sets an active character profile', () => {
-      expect(action.type).toEqual(SET_PROFILE_DATA);
-      expect(action.profile).toEqual(profile);
-    });
-  });
-
   describe('fetchCharacterData action', () => {
     test('returns RECEIVE_CHARACTER_DATA action with content on ajax success', async () => {
       mockAxios.onGet('https://test.api/?search=IG-88').reply(200, {
@@ -90,6 +78,48 @@ describe('Swapi', () => {
 
       try {
         await store.dispatch(fetchCharacterData('https://test.api/?search=R2-D2'));
+      } catch(err) {
+        expect(err.message).toEqual('Request failed with status code 500');
+      }
+    });
+  });
+
+  describe('characterSelection action', () => {
+    test('returns SET_PROFILE_DATA action with updated profile content on ajax success', async () => {
+      mockAxios.onGet('https://test.api/planet').reply(200, { name: 'Tatooine' });
+      mockAxios.onGet('https://test.api/species').reply(200, { name: 'Rodian' });
+      mockAxios.onGet('https://test.api/film').reply(200, { title: '' });
+
+      const response = await store.dispatch(characterSelection({
+        name: 'Greedo',
+        homeworld: 'https://test.api/planet',
+        species: 'https://test.api/species',
+        films: ['https://test.api/film'],
+      }));
+
+      await response;
+
+      const actions = store.getActions();
+
+      expect(actions[0].type).toEqual(SET_PROFILE_DATA);
+      expect(actions[0].profile).toEqual({
+        name: 'Greedo',
+        homeworld: 'Tatooine',
+        species: 'Rodian',
+        films: [''],
+      });
+    });
+
+    test('throws on ajax error', async () => {
+      mockAxios.onGet('https://test.api/planet').reply(500);
+
+      try {
+        await store.dispatch(characterSelection({
+          name: 'Greedo',
+          homeworld: 'https://test.api/planet',
+          species: 'https://test.api/species',
+          films: ['https://test.api/film'],
+        }));
       } catch(err) {
         expect(err.message).toEqual('Request failed with status code 500');
       }

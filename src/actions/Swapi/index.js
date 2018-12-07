@@ -20,7 +20,7 @@ export function partialMatchCharacters(search) {
   };
 }
 
-export function characterSelection(profile) {
+export function setProfileData(profile) {
   return {
     type: SET_PROFILE_DATA,
     profile,
@@ -58,5 +58,25 @@ export function fetchCharacterData(url) {
     const characters = await loadCharacterData(url);
 
     dispatch(receiveCharacterData(characters));
+  };
+}
+
+export function characterSelection(profile) {
+  return async function fetchThunk(dispatch) {
+    const [
+      homeworld,
+      species,
+      films,
+    ] = await Promise.all([
+      axios.get(profile.homeworld),
+      axios.get(profile.species),
+      Promise.all(profile.films.map(film => axios.get(film))),
+    ]);
+
+    profile.homeworld = homeworld.data.name;
+    profile.species = species.data.name;
+    profile.films = films.map(film => film.data.title);
+
+    dispatch(setProfileData(profile));
   };
 }

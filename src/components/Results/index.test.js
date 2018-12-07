@@ -3,7 +3,7 @@ import Enzyme, {shallow} from 'enzyme';
 import Component from './';
 
 describe('Results component', () => {
-  test('does not render when there are character matches', () => {
+  test('does not render when there are no character matches', () => {
     const wrapper = shallow(
       <Component
         characters={[]}
