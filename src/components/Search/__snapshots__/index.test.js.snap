@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component renders as expected 1`] = `
+<input
+  aria-label="Search for Star Wars Characters..."
+  className="search"
+  id="search"
+  name="search"
+  onChange={[Function]}
+  placeholder="Search for Star Wars Characters..."
+  type="search"
+/>
+`;

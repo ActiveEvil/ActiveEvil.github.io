@@ -49,7 +49,16 @@ class Profile extends React.Component {
               </tr>
               <tr>
                 <th scope={'row'}>Appears in</th>
-                <td>{character.films.map(film => `${film}\n`)}</td>
+                <td>
+                  {character.films.map((film, index) => (
+                    <span
+                      key={index}
+                      className={style.film}
+                    >
+                      {film}
+                    </span>
+                  ))}
+                </td>
               </tr>
             </tbody>
           </table>

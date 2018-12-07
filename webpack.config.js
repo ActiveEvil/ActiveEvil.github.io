@@ -1,6 +1,11 @@
 const path = require('path');
 const name = require('./package.json').name;
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+
+
 
 const BUILD_DIR = path.resolve(__dirname, './public/');
 const APP_DIR = path.resolve(__dirname, './src/');
@@ -34,9 +39,9 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [{
+        use:  [
+          MiniCssExtractPlugin.loader,
+          {
             loader: 'css-loader',
             options: {
               modules: true,
@@ -46,10 +51,7 @@ module.exports = {
               minimize: true,
             },
           },
-          {
-            loader: 'postcss-loader',
-          }],
-        }),
+          'postcss-loader'],
       },
       {
         test: /\.svg$/,
@@ -57,8 +59,19 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        parallel: true,
+        terserOptions: {
+          ecma: 6,
+        },
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
   plugins: [
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: `${name}.min.css`,
     }),
   ],

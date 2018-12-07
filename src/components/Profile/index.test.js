@@ -1,5 +1,6 @@
 import React from 'react';
 import Enzyme, {shallow} from 'enzyme';
+import renderer from 'react-test-renderer';
 import Component from './';
 
 describe('Profile component', () => {
@@ -16,13 +17,45 @@ describe('Profile component', () => {
     const wrapper = shallow(
       <Component
         character={{
-          name: 'IG-88',
+          birth_year: '44BBY',
+          eye_color: 'black',
+          films: ['A New Hope'],
+          gender: 'male',
+          hair_color: 'n/a',
+          height: '173',
+          homeworld: 'Rodia',
+          mass: '74',
+          name: 'Greedo',
+          skin_color: 'green',
+          species: 'Rodian',
         }}
       />
     );
 
     expect(wrapper.find('.container').exists()).toBe(true);
-    expect(wrapper.find('.title').text()).toEqual('IG-88');
+  });
 
+  test('renders as expected', () => {
+    const component = renderer.create(
+      <Component
+        character={{
+          birth_year: '44BBY',
+          eye_color: 'black',
+          films: ['A New Hope'],
+          gender: 'male',
+          hair_color: 'n/a',
+          height: '173',
+          homeworld: 'Rodia',
+          mass: '74',
+          name: 'Greedo',
+          skin_color: 'green',
+          species: 'Rodian',
+        }}
+      />
+    );
+
+    const tree = component.toJSON();
+
+    expect(tree).toMatchSnapshot();
   });
 });

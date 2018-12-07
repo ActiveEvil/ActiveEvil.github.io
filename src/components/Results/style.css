@@ -1,6 +1,6 @@
 .list
 {
-    overflow: auto;
+    overflow-y: auto;
 
     box-sizing: border-box;
     width: 31%;
@@ -12,6 +12,8 @@
     animation: FadeIn .7s ease-in-out forwards;
 
     border-right: 3px #a6ceef inset;
+
+    -webkit-overflow-scrolling: touch;
 }
 
 .item
@@ -21,6 +23,7 @@
 
 .link
 {
+    cursor: default;
     text-decoration: none;
 }
 
