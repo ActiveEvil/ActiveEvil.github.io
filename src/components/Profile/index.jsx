@@ -16,24 +16,40 @@ class Profile extends React.Component {
           <table>
             <tbody>
               <tr>
-                <td>Born</td>
+                <th scope={'row'}>Homeworld</th>
+                <td>{character.homeworld}</td>
+              </tr>
+              <tr>
+                <th scope={'row'}>Born</th>
                 <td>{character.birth_year}</td>
               </tr>
               <tr>
-                <td>Gender</td>
+                <th scope={'row'}>Species</th>
+                <td>{character.species}</td>
+              </tr>
+              <tr>
+                <th scope={'row'}>Gender</th>
                 <td>{character.gender}</td>
               </tr>
               <tr>
-                <td>Height</td>
-                <td>{character.height}</td>
+                <th scope={'row'}>Height</th>
+                <td>{character.height}cm</td>
               </tr>
               <tr>
-                <td>Hair colour</td>
+                <th scope={'row'}>Weight</th>
+                <td>{character.mass}kg</td>
+              </tr>
+              <tr>
+                <th scope={'row'}>Hair colour</th>
                 <td>{character.hair_color}</td>
               </tr>
               <tr>
-                <td>Eye colour</td>
+                <th scope={'row'}>Eye colour</th>
                 <td>{character.eye_color}</td>
+              </tr>
+              <tr>
+                <th scope={'row'}>Appears in</th>
+                <td>{character.films.map(film => `${film}\n`)}</td>
               </tr>
             </tbody>
           </table>

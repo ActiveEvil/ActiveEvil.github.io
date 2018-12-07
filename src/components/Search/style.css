@@ -15,7 +15,7 @@
     color: #a6ceef;
     border: none;
     outline: 0;
-    background: transparent;
+    background-color: rgba(27,57,233, .3);
 }
 
 @media (max-width: 600px)
